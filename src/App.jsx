@@ -2,12 +2,14 @@ import { useState } from "react";
 import Header from "./components/Header";
 import IconoNuevoGasto from "./img/nuevo-gasto.svg";
 import Modal from "./components/Modal";
+import {generarId} from "./helpers"
 
 function App() {
-  const [presupuesto, setPresupuesto] = useState(0);
+  const [presupuesto, setPresupuesto] = useState('');
   const [isValidPresupuesto, setIsValidPresupuesto] = useState(false);
   const [modal, setModal] = useState(false);
   const [animarModal, setAnimarModal] = useState(false);
+  const [gastos, setGastos] = useState([]);
 
   const handleNuevoGasto = () => {
     //abre el nuevo modal con un tiempo de espera.
@@ -16,6 +18,19 @@ function App() {
       setAnimarModal(true);
     }, 300);
   };
+
+  const guardarGasto = (gasto) => {//creo un arreglo con los gastos desde Mdal
+    gasto.id = generarId();
+    setGastos([...gastos, gasto]);
+    
+    setAnimarModal(false);
+    setTimeout(() => {
+      setModal(false);
+    }, 300);
+
+  };
+
+  
 
   return (
     <div>
@@ -34,7 +49,7 @@ function App() {
           />
         </div>
       )}
-      {modal && <Modal setModal={setModal} animarModal={animarModal} setAnimarModal={setAnimarModal} />}
+      {modal && <Modal setModal={setModal} animarModal={animarModal} setAnimarModal={setAnimarModal} guardarGasto={guardarGasto} />}
     </div>
   );
 }

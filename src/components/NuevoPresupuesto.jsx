@@ -11,6 +11,7 @@ const NuevoPresupuesto = ({
     e.preventDefault();
     if (!presupuesto || presupuesto < 0) {
       setMensaje("No es un presupuesto válido");
+      setPresupuesto('');
       return;
     }
     setMensaje("");
