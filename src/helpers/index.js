@@ -14,3 +14,17 @@ export const formatearFecha = fecha => {
     }
     return fechaNueva.toLocaleDateString('es-ES',opciones)
 }
+
+
+//grafico perrito
+//<CircularProgressbarWithChildren value={porcentaje}>
+  //        {/* Grafico con meme */}
+    //      <img
+      //      style={{ width: 80, marginTop: 130, marginLeft:-80}}
+       //     src="https://i.imgur.com/b9NyUGm.png"
+         //   alt="doge"
+       //   />
+       //   <div style={{ fontSize: 25, marginTop: 10,marginLeft:-80}}>
+         //   <strong>{`${porcentaje}% Gastado`}</strong>
+        //  </div>
+       // </CircularProgressbarWithChildren>

@@ -4,8 +4,8 @@ import {
   SwipeableListItem,
   SwipeAction,
   TrailingActions,
-} from "react-swipeable-list";//Dependencia de react para hacer el efecto deslizable
-import "react-swipeable-list/dist/styles.css";//Hoja de estilos para la dependencia deslizable.
+} from "react-swipeable-list"; //Dependencia de react para hacer el efecto deslizable
+import "react-swipeable-list/dist/styles.css"; //Hoja de estilos para la dependencia deslizable.
 import { formatearFecha } from "../helpers";
 import IconoAhorro from "../img/icono_ahorro.svg";
 import IconoCasa from "../img/icono_casa.svg";
@@ -24,22 +24,21 @@ const diccionarioIconos = {
   salud: IconoSalud,
   suscripciones: IconoSuscripciones,
 };
-const Gasto = ({ gasto, setGastoEditar}) => {
+const Gasto = ({ gasto, setGastoEditar, eliminarGasto }) => {
   const { categoria, nombre, cantidad, id, fecha } = gasto;
-  const leadingActions = ()=>(<LeadingActions>
-    <SwipeAction onClick={()=>setGastoEditar(gasto)}>
-      Editar
-    </SwipeAction>
-  </LeadingActions>)
+  const leadingActions = () => (
+    <LeadingActions>
+      <SwipeAction onClick={() => setGastoEditar(gasto)}>Editar</SwipeAction>
+    </LeadingActions>
+  );
 
-  
-  const trailingActions = ()=>(
+  const trailingActions = () => (
     <TrailingActions>
-      <SwipeAction onClick={()=>console.log('eliminar...')}>
+      <SwipeAction onClick={() => eliminarGasto(id)} destructive={true}>
         Eliminar
       </SwipeAction>
     </TrailingActions>
-  )
+  );
   return (
     <SwipeableList>
       <SwipeableListItem

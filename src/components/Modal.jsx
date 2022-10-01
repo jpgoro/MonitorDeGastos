@@ -8,6 +8,7 @@ const Modal = ({
   setAnimarModal,
   guardarGasto,
   gastoEditar,
+  setGastoEditar
 }) => {
   const [nombre, setNombre] = useState("");
   const [cantidad, setCantidad] = useState("");
@@ -30,7 +31,7 @@ const Modal = ({
     //oculta el modal con con un tiempo de espera
 
     setAnimarModal(false);
-
+    setGastoEditar({});
     setTimeout(() => {
       setModal(false);
     }, 300);
