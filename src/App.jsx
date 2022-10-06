@@ -13,7 +13,7 @@ function App() {
       : [] //Si hay gastos los pasa de string a  array y sino devuelve un array vacio.
   );
   const [presupuesto, setPresupuesto] = useState(
-    Number(localStorage.getItem("presupuesto")) ?? ""
+    Number(localStorage.getItem("presupuesto")) ?? String("")
   ); //va a ponerle el valor del localStorage al inicio y si no hay nada, le agrega un string vacio.
   const [isValidPresupuesto, setIsValidPresupuesto] = useState(false);
   const [modal, setModal] = useState(false);

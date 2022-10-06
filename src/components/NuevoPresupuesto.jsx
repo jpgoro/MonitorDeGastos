@@ -27,7 +27,7 @@ const NuevoPresupuesto = ({
             type="number"
             value={presupuesto}
             className="nuevo-presupuesto"
-            placeholder="Monto Presupuesto"
+            placeholder="Ingrese su Presupuesto"
             onChange={(e) => setPresupuesto(Number(e.target.value))} //casteo a Number para asegurar el ingreso de numeros.
           />
         </div>
